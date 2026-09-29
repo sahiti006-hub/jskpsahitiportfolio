@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F8F9FC;
+    color: #11142D;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Outfit', sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Atmospheric Lavender Background Mesh & Grid */
+.bg-atmospheric-light {
+  background: 
+    radial-gradient(circle at 80% 10%, rgba(139, 124, 246, 0.14) 0%, transparent 40%),
+    radial-gradient(circle at 10% 40%, rgba(91, 124, 250, 0.10) 0%, transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(79, 36, 216, 0.08) 0%, transparent 50%),
+    #F8F9FC;
+}
+
+.bg-grid-pattern-light {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(139, 124, 246, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(139, 124, 246, 0.08) 1px, transparent 1px);
+}
+
+/* Premium Light Glassmorphism Cards & Panels */
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(139, 124, 246, 0.15);
+  box-shadow: 0 10px 30px -10px rgba(79, 36, 216, 0.05);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(139, 124, 246, 0.18);
+  box-shadow: 0 10px 30px -10px rgba(79, 36, 216, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card-light:hover {
+  border-color: rgba(79, 36, 216, 0.35);
+  box-shadow: 0 16px 40px -12px rgba(79, 36, 216, 0.14);
+  transform: translateY(-3px);
+}
+
+/* Text Gradients */
+.text-gradient-purple {
+  background: linear-gradient(135deg, #4F24D8 0%, #5B7CFA 60%, #8B7CF6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbar for Light Theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F9FC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4F24D8;
+}
+
+/* Keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.04); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 5s ease-in-out infinite;
+}
